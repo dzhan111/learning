@@ -1,1 +1,2 @@
-coding by hand
+practicing coding by hand
+C++
