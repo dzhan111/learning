@@ -8,17 +8,16 @@ class Solution {
     Solution() {
 
     }
-    vector<int> twoSum(vector<int> nums, int target) {
+    vector<int> twoSum(const vector<int>& nums, int target) {
         unordered_map<int, int> hm;
+        hm.reserve(nums.size());
 
         for (size_t j = 0; j < nums.size(); j++) {
-            if (hm.find(target - nums[j])!= hm.end()) {
-                vector<int> ans;
-                ans.push_back(hm[target - nums[j]]);
-                ans.push_back(j);
-                return ans;
+            auto it = hm.find(target - nums[j]);
+            if (it != hm.end()) {
+                return {it->second, (int) j};
             }else{
-                hm[nums[j]] = j;
+                hm[nums[j]] = (int) j;
             }
         }
         return vector<int> {-1};
