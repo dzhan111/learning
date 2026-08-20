@@ -2,6 +2,7 @@
 #include "vector.hpp"
 
 using namespace std;
+//clang++ -std=c++17 -o vectr vector.cpp main.cpp
 
 int main() {
 
