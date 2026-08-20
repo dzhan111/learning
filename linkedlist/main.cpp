@@ -23,8 +23,6 @@ int main() {
         temp->next = new node{(int)i,nullptr};
         temp = temp->next;
         cache.push_back(temp);
-        // cout << "new temp value: " << endl;
-        // cout << temp->value << endl;
     }   
 
     cout << "print out numbers in cache: " << endl;
@@ -39,18 +37,15 @@ int main() {
         // cout << "deleted " << elem->value << endl;
     }
 
-    // for (const auto & elem: cache) {
-    //     if (elem != nullptr) {
-    //         cout << "not fully deleted" << endl;
-    //         cout << elem->value << endl;
-    //         return 1;
-    //     }
-    // }
+    for (const auto & elem: cache) {
+        if (elem != nullptr) {
+            cout << "not fully deleted" << endl;
+            cout << elem->value << endl;
+            return 1;
+        }
+    }
 
 
-    //delete 
-    // head->value = 0;
-    // head->next = nullptr;
     cout << "fully deleted" << endl;
 
     return 0;
